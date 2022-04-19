@@ -1,0 +1,120 @@
+* inicializar proyecto 
+* limpiar codigo 
+* introducir hojas de estilo que se van a requerir 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+* introducir en un div y una etiqueta header  un h1 con el titulo de la aplicacion
+* crear una carpeta components
+* crear un componente que se va a encargar de preguntar el presupuesto a iniciar 
+* en el componente Pregunta importar un Fragment para crear el titulo de el componente y el formulario
+* Formulario (
+     <h2>Coloca tu Presupuesto</h2>
+                 <form>
+                     <input 
+                           type="number"
+                           placeholder="Coloca tu Presupuesto"
+                           className="u-full-width"
+                     />
+                     <input 
+                           type="submit"
+                           className="button-primary u-full-width"
+                           value="definir presupuesto"
+                     />
+                 </form>
+)  
+* crear el state para leer el input 
+* importar la funcion parceInt ( para convertir los numeros introducidos en el input de sting a valor numeros)
+  const definirPresupuesto = e => {
+          console.log(parseInt(e.target.value) )
+    }( onChange )
+* crear funcion onSumit para mandar la informacion al presionar el boton
+  const agregarPresupuesto = e => {
+          e.preventDefault()
+    }
+* validar que la cantidad sea mayor que cero y valida 
+  colocar un if para condicionar 
+  if( cantidad < 0 || isNaN( cantidad )) {
+              guardarError( true )
+              return
+* como se va a utilizar en varias ocaciones el mensaje de error, crear un componente para el mensaje
+  { error ? <Error mensaje= "El Presupuesto es Incorrecto"/> : null } enviar el mensaje atravez de props
+* crear dos states uno para el presupuesto y el otro para el restante en el componente principal
+  }
+
+ * crear un formulario en el componente principal para mostrar el presupuest y el restante
+    <form>
+                 <h2>Agrega tus gastos aqui</h2>
+                 <div className="campo">
+                     <label>Nombre Gasto</label>
+                     <input 
+                           type="text"
+                           className="u-full-width"
+                           placeholder="Ej. Transporte"
+                     />
+                 </div>
+
+                 <div className="campo">
+                     <label>Cantidad Gasto</label>
+                     <input 
+                           type="number"
+                           className="u-full-width"
+                           placeholder="Ej. 300"
+                     />
+                 </div>
+
+                 <input 
+                       type="submit"
+                       className="button-primary u-full-width"
+                       value="Agregar Gasto"
+                 />
+            </form>
+* agregar una carga condicional de componentes para mostrar ya sea un componente u otro
+
+  const [ mostrarpregunta, actualizarPregunta ] = useState(true)
+  {mostrarpregunta ? 
+        (
+            <Pregunta 
+            guardarPresupuesto={ guardarPresupuesto }
+            guardarRestante={ guardarRestante }
+            actualizarPregunta={ actualizarPregunta }
+            />
+        ) :(
+
+           <div className="row">
+                <div className="one-half column">
+                      <Formulario />
+                </div>
+
+                <div className="one-half column">
+                      2
+                </div>
+           </div>
+        ) }
+* crear dos states para guardar lo que ingresamos de los inputs de el Formulario 
+    const [ nombregasto, guardarNombreGasto ] = useState("")
+    const [ cantidad, guardarCantidad ] = useState(0)
+* crear la funcion submit para enviar la informacion hacia el componente principal
+
+  validar(
+          guardarError(true)
+            return
+        }
+       )
+    { error ? <Error mensaje="todos los campos son obligatorios o presupuesto incorrecto"/> : null }
+
+
+* construir el gasto(
+  crear un objeto para para agregar los campos y agregar un id ( instatlar npm shortid )
+
+
+)
+* pasar el gasto hacia el componente principal(
+
+)
+* resetear el form (
+
+
+)
+
+   
